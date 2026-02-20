@@ -1,10 +1,15 @@
-let res = sumDigits(12345)
-console.log(`sum digits of 12345 = ${res}`) // should print 15
-res = luckyNumber(123871) //  1 + 3 + 7 === 2 + 8 + 1
-console.log(res ? 'lucky' : 'not lucky') // should print lucky
-res = luckyNumber(124871) //  1 + 4 + 7 === 2 + 8 + 1
-console.log(res ? 'lucky' : 'not lucky') // should print not lucky
-
+let num = 12345
+let res = sumDigits(num)
+console.log(`Sum of digits from your number: ${num} is ${res}`) // should print 15
+num = 123871
+res = luckyNumber(num) //  1 + 3 + 7 === 2 + 8 + 1
+console.log(res ? `Your number: ${num} is lucky` : `Your number: ${num} is not lucky`) // should print lucky
+num = 124871
+res = luckyNumber(num) //  1 + 4 + 7 === 2 + 8 + 1
+console.log(res ? `Your number: ${num}  is lucky` : `Your number: ${num} is not lucky`) // should print not lucky
+num = 124871457678693
+res = luckyNumber(num)
+console.log(res ? `Your number: ${num}  is lucky` : `Your number: ${num} is not lucky`) // should print not lucky
 
 function sumDigits(n) {
     // TODO returned sum of digits
@@ -20,17 +25,24 @@ function sumDigits(n) {
 function luckyNumber(num) {
     // TODO returned true if num is lucky and false otherwise
     // lucky number if sum of odd position digits is equal to sum of even position digits
-    numOrigin = num
+    let originNum = num
+    let evenSum = 0
+    let oddSum = 0
     let i = 0
     while (num > 0) {
         num = (num / 10) - ((num % 10) / 10)
         i++
     }
-    console.log(i)
     let divider = 10 ** (i-1)
-
-    console.log(divider)
-    let res = numOrigin % divider
-    console.log(numOrigin)
-    console.log(res)
+    while (originNum > 0) {
+        oddSum = oddSum + ((originNum / divider)  - ((originNum % divider) / divider))
+        originNum  = originNum % divider
+        divider = divider / 10
+        evenSum = evenSum + ((originNum / divider)  - ((originNum % divider) / divider))
+        originNum  = originNum % divider
+        divider = divider / 10
+    }
+    if (evenSum === oddSum) {
+        return true
+    }
 }
