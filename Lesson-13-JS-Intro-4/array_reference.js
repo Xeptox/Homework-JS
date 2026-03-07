@@ -1,4 +1,4 @@
-let x = 10
+ let x = 10
 console.log(`before call pow2Variable: x = ${x}`)
 pow2Variable(x)
 console.log(`after call pow2Variable: X = ${x}`)
