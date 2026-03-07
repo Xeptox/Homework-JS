@@ -1,10 +1,10 @@
 console.log('=== First object creation method ===')
 
 const person = {
-    'firstName': 'John',
+   'firstName': 'John',
     'lastName': 'Doe',
     age: 25,
-    "fullName": function () {
+    fullName: function () {
         return `${this.firstName} ${this.lastName}`
     }
 }
