@@ -8,19 +8,21 @@ while (inputData !== null ) {
     //TODO create new book and add it to library only if isbn is unique
     inputData = prompt('Enter data in format: isbn,title,author,year')
     if (inputData !== null) {
-        const book =  new Book(inputData[0], inputData[1], inputData[2],inputData[3])
+        for (const key in Book) {
+            const book = new Book(inputData[key])
+            library.push(book)
+        }
 
-        library.push(book)
     }
 }
-
 printLibrary(library)
 
 function printLibrary() {
     //TODO print all books from library to console
-    // console.log(Book.toString(['isbn']))
-    console.log(Book.toString())
-    console.log("test print library" + library)
+    console.log(Book.toString(book))
+    console.log("test print library  " + library)
+
+
 
 }
 
@@ -37,7 +39,7 @@ function Book(isbn, title, author, year) {
         return` ISBN: ${this.isbn} , Title: ${this.title}, Author: ${this.author}, Year of publish: ${this.year}`
     }
 }
-// Book 001 - 978-1849707435, Horus Rising, Dan Abnett, 2006
-// Book 002 - 978-1849703833, False Gods, Graham McNeill, 2006
-// Book 003 - 978-1849707534, Galaxy in Flames, Ben Counter, 2006
-// Book 004 - 978-1849708036, The Flight of the Eisenstein, James Swallow, 2007
+// Book 001 - 9781849707435, Horus Rising, Dan Abnett, 2006
+// Book 002 - 9781849703833, False Gods, Graham McNeill, 2006
+// Book 003 - 9781849707534, Galaxy in Flames, Ben Counter, 2006
+// Book 004 - 9781849708036, The Flight of the Eisenstein, James Swallow, 2007

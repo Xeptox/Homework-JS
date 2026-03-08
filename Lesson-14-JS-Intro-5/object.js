@@ -43,28 +43,19 @@ console.log(peter.id)
 console.log(peter)
 console.log(peter["firstName"])
 let key = 'hobby'
-console.log(peter.key)
+console.log("Peter [key] 1 " + peter.key)
 console.log(peter['hobby'])
-console.log(peter[key])
-showFields(person, ['firstName', 'lastName'])
-showFields(peter, ['firstName', 'age', 'hobby'])
-printObject(person)
-printObject(peter)
-
-
-
-
-
-
-
+console.log("Peter [key] 2 " + peter[key])
 
 
 console.log('=== Second object creation method ===')
+
 const mary = new Person(2000, 'Mary', 'Poppins', 22)
+
 console.log("Mary-1.1")
 console.log(mary)
 console.log("Mary-1.2")
-printObject(mary)
+
 const persons = [mary, peter, new Person(3000, 'Karl', 'Bush', 37),
     {
         id: 4000,
@@ -77,7 +68,7 @@ const persons = [mary, peter, new Person(3000, 'Karl', 'Bush', 37),
     }
 ]
 for (let i = 0; i < persons.length; i++) {
-    console.log(persons[i].fullName())
+    console.log("=====" + persons[i].fullName())
 }
 
 function Person(id, firstName, lastName, age) {
@@ -94,13 +85,17 @@ function printObject(obj) {
     console.log('=== Print Object ===')
     for (const key in obj) {
         if (typeof obj[key] !== 'function') {
-            console.log(`${key}: ${obj[key]}`)
+            console.log(`/////${key}/////: /////${obj[key]}/////`)
         } else {
-            console.log(`${key}: ${obj[key]()}`)
+            console.log(`+++++${key}+++++: +++++${obj[key]()}+++++`)
         }
     }
     console.log('=== End Print Object ===')
 }
+
+printObject(person)
+printObject(peter)
+printObject(mary)
 
 function showFields(person, fields) {
     console.log('=== Show Fields ===')
@@ -109,3 +104,5 @@ function showFields(person, fields) {
     }
     console.log('=== End Show Fields ===')
 }
+showFields(person, ['firstName', 'lastName'])
+showFields(peter, ['firstName', 'age', 'hobby'])
