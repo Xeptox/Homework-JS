@@ -8,13 +8,13 @@ while (inputData !== null ) {
     //TODO create new book and add it to library only if isbn is unique
     inputData = prompt('Enter data in format: isbn,title,author,year')
     if (inputData !== null) {
-        for (const key in Book) {
-            const book = new Book(inputData[key])
-            library.push(book)
-        }
-
+        const bookProperties = inputData.split(',')
+        const book = new Book(bookProperties[0], bookProperties[1], bookProperties[2], bookProperties[3])
+        library.push(book)
     }
+
 }
+
 printLibrary(library)
 
 function printLibrary() {
