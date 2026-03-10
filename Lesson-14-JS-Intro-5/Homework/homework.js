@@ -19,7 +19,6 @@ printLibrary(library)
 
 function printLibrary() {
     //TODO print all books from library to console
-    console.log(Book.toString(book))
     console.log("test print library  " + library)
 
 
@@ -28,6 +27,7 @@ function printLibrary() {
 
 function findBook(library, isbn) {
     //TODO find book by isbn and return index of book in library or -1 if book not found
+
 }
 
 function Book(isbn, title, author, year) {
