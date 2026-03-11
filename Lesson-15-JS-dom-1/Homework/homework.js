@@ -12,10 +12,13 @@ while (inputData) {
 }
 
 
-printLibrary(library)
+document.getElementById('libPrint').innerText = printLibrary(library)
+
+
 
 function printLibrary(library) {
     // TODO append all books from library to html by numbers
+    console.log(library)
 }
 
 function findBook(library, isbn) {
