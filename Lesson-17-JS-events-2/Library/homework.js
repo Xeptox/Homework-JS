@@ -11,7 +11,20 @@ addBook.onclick = function () {
     // Add book to DOM (use element books for appending
     // Add remove book functionality
     // NB! if remove book from DOM remove from library too
-    findBook()
+    const book = addBook.value.trim()
+    const buttonDelete = createButtonDel()
+    const i = 1
+    if (isbn.value !== findBook(isbn)) {
+        const li = document.createElement('li')
+        li.append(`Book-${i}`, isbn, title, author, year, buttonDelete)
+        books.append(li)
+
+
+    }
+    // isbn.value = ''
+    // title.value = ''
+    // author.value = ''
+    // year.value = ''
 }
 
 
