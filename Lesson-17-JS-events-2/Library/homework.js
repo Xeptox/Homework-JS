@@ -20,7 +20,7 @@ addBook.onclick = function () {
         li.append('ISBN:', isbn.value,'    ', 'Title: ', title.value, '    ',
             'Author: ', author.value,'    ', 'Year of publishing: ', year.value,'    ',  buttonDelete)
         books.append(li)
-        const bookToLib = new Book(library)
+        const bookToLib = new Book(isbn.value, title.value, author.value, year.value)
         library.push(bookToLib)
         p.append(library)
 
