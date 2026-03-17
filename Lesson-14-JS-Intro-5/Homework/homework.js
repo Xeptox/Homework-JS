@@ -1,0 +1,45 @@
+const library = []
+
+// isbn, title, author, year
+let inputData = alert('Enter data in format: isbn, title, author, year')
+
+
+while (inputData !== null ) {
+    //TODO create new book and add it to library only if isbn is unique
+    inputData = prompt('Enter data in format: isbn,title,author,year')
+    if (inputData !== null && bookProperties[0] !== book[0] ) {
+        const bookProperties = inputData.split(',')
+        const book = new Book(bookProperties[0], bookProperties[1], bookProperties[2], bookProperties[3])
+        library.push(book)
+    }
+
+}
+
+printLibrary(library)
+
+function printLibrary() {
+    //TODO print all books from library to console
+    console.log(library)
+
+
+
+}
+
+function findBook(library, isbn) {
+    //TODO find book by isbn and return index of book in library or -1 if book not found
+
+}
+
+function Book(isbn, title, author, year) {
+    this.isbn = isbn
+    this.title = title
+    this.author = author
+    this.year = +year
+    this.toString = function () {
+        return` ISBN: ${this.isbn} , Title: ${this.title}, Author: ${this.author}, Year of publish: ${this.year} \n`
+    }
+}
+// Book 001 - 9781849707435, Horus Rising, Dan Abnett, 2006
+// Book 002 - 9781849703833, False Gods, Graham McNeill, 2006
+// Book 003 - 9781849707534, Galaxy in Flames, Ben Counter, 2006
+// Book 004 - 9781849708036, The Flight of the Eisenstein, James Swallow, 2007
