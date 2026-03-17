@@ -13,17 +13,20 @@ addBook.onclick = function () {
     // NB! if remove book from DOM remove from library too
     const book = addBook.value.trim()
     const buttonDelete = createButtonDel()
-    const i = 1
     if (isbn.value !== findBook(isbn)) {
         const li = document.createElement('li')
         const p = document.createElement('p')
-        li.append(`Book-${i} `)
-        li.p.append('ISBN:', isbn.value,'    ', 'Title: ', title.value, '    ',
+        library.push(isbn.value, title.value, author.value, year.value)
+        li.append('ISBN:', isbn.value,'    ', 'Title: ', title.value, '    ',
             'Author: ', author.value,'    ', 'Year of publishing: ', year.value,'    ',  buttonDelete)
         books.append(li)
-
+        const bookToLib = new Book(library)
+        library.push(bookToLib)
+        p.append(library)
 
     }
+
+
     // isbn.value = ''
     // title.value = ''
     // author.value = ''
