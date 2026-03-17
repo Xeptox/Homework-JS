@@ -16,7 +16,10 @@ addBook.onclick = function () {
     const i = 1
     if (isbn.value !== findBook(isbn)) {
         const li = document.createElement('li')
-        li.append(`Book-${i}`, isbn, title, author, year, buttonDelete)
+        const p = document.createElement('p')
+        li.append(`Book-${i} `)
+        li.p.append('ISBN:', isbn.value,'    ', 'Title: ', title.value, '    ',
+            'Author: ', author.value,'    ', 'Year of publishing: ', year.value,'    ',  buttonDelete)
         books.append(li)
 
 
