@@ -4,7 +4,7 @@ function createButtonDel(){
     buttonDelete.addEventListener('click', function(e) {
         e.target.parentElement.remove()
     })
-    //buttonDelete.classList.add('delete)
+    // buttonDelete.classList.add('delete')
     buttonDelete.style.color = 'red'
     buttonDelete.style.marginLeft = '10px'
     return buttonDelete

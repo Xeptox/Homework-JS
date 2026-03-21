@@ -5,6 +5,9 @@ const author = document.getElementById('author')
 const year = document.getElementById('year')
 const addBook = document.getElementById('addBook')
 const books = document.getElementById('books')
+const minYear = document.getElementById('minYear')
+const maxYear = document.getElementById('maxYear')
+const avrgYear = document.getElementById('avrgYear')
 
 addBook.onclick = function () {
     if (findBook(library, isbn.value) === -1) {
@@ -12,7 +15,7 @@ addBook.onclick = function () {
         library.push(book);
         const li = document.createElement('li');
         const buttonDel = document.createElement("button");
-        buttonDel.append('delete');
+        buttonDel.append('Delete');
         buttonDel.onclick = function (e) {
             e.target.parentElement.remove();
             const index = findBook(library, book.isbn);
@@ -36,6 +39,18 @@ function findBook(library, isbn) {
     return -1
 }
 
+function statistics(library, year) {
+    for (let i = 0; i <library.length; i++) {
+        if (library[i].year < library[i + 1].year) {
+            let minY = library[i].year
+            let maxY = library[i + 1].year
+            minYear.append(minY)
+            maxYear.append(maxY)
+        }
+    }
+
+
+}
 function Book(isbn, title, author, year) {
     this.isbn = isbn
     this.title = title
