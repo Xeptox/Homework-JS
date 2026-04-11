@@ -30,6 +30,11 @@ console.log('=== splice ===')
 // arr.splice(0, 0, 100, 200) // unshift
 // arr.splice(arr.length - 1, 1) // pop
 // arr.splice(arr.length, 0, 1000, 2000) // push
-arr.splice(5, 20)
+console.log(arr.length)
+arr.splice(5, 1)
+console.log(arr)
+console.log(arr.length)
+res = arr.shift()
+console.log(res)
 console.log(arr)
 
