@@ -11,6 +11,14 @@ const H1 = document.createElement('H1')
 document.getElementById('divH1').append(H1)
 
 H1.innerText = "Astro-Tools"
+H1.onmouseover = bigLetters
+H1.onmouseout = smallLetters
+function bigLetters(e) {
+    e.target.innerText = e.target.innerText.toUpperCase()
+}
+function smallLetters(e) {
+    e.target.innerText = e.target.innerText.toLowerCase()
+}
 H1.style.border = "solid black"
 H1.style.padding = "3px"
 const mainMenuDiv = document.createElement('div')
@@ -21,6 +29,7 @@ document.getElementById('mainMenuDiv').style.border = "solid black"
 const mainMenuList = document.createElement('ul')
 mainMenuList.id = "mainMenuList"
 mainMenuDiv.append(mainMenuList)
+
 
 
 for (let i = 0; i < 3; i++){
