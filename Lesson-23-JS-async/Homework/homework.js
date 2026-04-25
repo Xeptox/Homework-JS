@@ -1,12 +1,12 @@
 // Homework: doesn't use const, let and setTimeout must call 10 times
 // Problem -> console prints 10, 10 times
-console.log('=== Original ===')
-
-for (var i = 0; i < 10; i++) {
-    setTimeout(function () {
-        console.log(i)
-    }, 10)
-}
+// console.log('=== Original ===')
+//
+// for (var i = 0; i < 10; i++) {
+//     setTimeout(function () {
+//         console.log(i)
+//     }, 10)
+// }
 
 // Solution 1 -> use let
 // for (let i = 0; i < 10; i++) {
@@ -18,11 +18,14 @@ for (var i = 0; i < 10; i++) {
 //Async problem. Cycle "for" works independent of "console.log" because he is outside "setTimeout" function
 // cycle "for" runs 10 times from i = 0 to i = 10 and then prints with "console.log" with time delays
 
-setTimeout(  () => console.log('=== Solution ==='), 20)
+//setTimeout(  () => console.log('=== Solution ==='), 15)
 
-setTimeout(function () {
-    for (var j = 0; j <= 10; j++) {
-        console.log(`j ${j}`)
+
+for (var j = 0; j <= 10; j++) {
+    console.log(setTimeout( () => j,1000))
+    // setTimeout( () => console.log(j), 50)
+    // setTimeout( () => j++, 100)
+        //setTimeout(() => console.log(`j ${j}`), 150)
     }
-    }, 100)
+
 

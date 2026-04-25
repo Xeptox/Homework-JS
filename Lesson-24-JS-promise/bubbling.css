@@ -1,0 +1,21 @@
+div{
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#div1{
+    background: darkred;
+    width: 400px;
+    height: 400px;
+}
+#div2{
+    background: green;
+    width: 250px;
+    height: 250px;
+}
+#div3{
+    background: blue;
+    width: 150px;
+    height: 150px;
+}
